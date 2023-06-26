@@ -1,0 +1,35 @@
+<%= form_with model: @talker do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @talker.errors.full_messages_for(:name).each do |message| %>
+      <div class="text-red-500">
+        <%= message %><br>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :age %><br>
+    <%= form.number_field :age %>
+    <% @talker.errors.full_messages_for(:age).each do |message| %>
+      <div class="text-red-500">
+        <%= message %><br>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :expetise %><br>
+    <%= form.text_field :expetise %>
+    <% @talker.errors.full_messages_for(:expetise).each do |message| %>
+      <div class="text-red-500">
+        <%= message %><br>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
